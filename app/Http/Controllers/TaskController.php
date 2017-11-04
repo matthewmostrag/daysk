@@ -44,7 +44,9 @@ class TaskController extends Controller
             'due_date' => $request->due_date
         ]);
 
-        return redirect('/tasks/' . $task->id);
+        return redirect()->route('tasks.show', [
+            'task' => $task
+        ]);
     }
 
     /**
@@ -84,7 +86,9 @@ class TaskController extends Controller
             'due_date' => $request->due_date
         ]);
 
-        return redirect('/tasks/' . $task->id);
+        return redirect()->route('tasks.show', [
+            'task' => $task
+        ]);
     }
 
     /**
@@ -97,6 +101,6 @@ class TaskController extends Controller
     {
         $task->delete();
 
-        return redirect('/tasks');
+        return redirect()->route('tasks.index');
     }
 }

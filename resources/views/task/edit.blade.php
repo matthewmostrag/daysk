@@ -10,7 +10,7 @@
     </div>
 @endif
 
-<form method="POST" action="/tasks/{{ $task->id }}">
+<form method="POST" action="{{ route('tasks.update', ['task' => $task]) }}">
 
     {{ method_field('PATCH') }}
 

@@ -10,7 +10,7 @@
     </div>
 @endif
 
-<form method="post" action="/tasks">
+<form method="POST" action="{{ route('tasks.store') }}">
 
     {{ csrf_field() }}
 
