@@ -1,0 +1,23 @@
+// TASKS
+
+// Date component
+.date {
+    .day {
+        float: left;
+        margin-right: 1rem;
+
+        font-size: 14.4rem;
+        line-height: 0.8;
+    }
+
+    div:nth-child(2) {
+        float: left;
+
+        span {
+            display: block;
+
+            font-size: 3.6rem;
+            line-height: 1.2;
+        }
+    }
+}

@@ -2,9 +2,12 @@
 
 @section('content')
 
-    <h1>Tasks</h1>
+    <div class="col">
+        @include('partials.date')
+        @include('partials.progress')
+    </div>
 
-    <ul>
+    <ul class="col">
         @foreach ($tasks as $task)
             <li><a href="{{ route('tasks.show', ['task' => $task]) }}">{{ $task->title }}</a></li>
         @endforeach
