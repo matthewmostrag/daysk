@@ -1,0 +1,44 @@
+// Navigation
+
+nav {
+    position: relative;
+
+    ul {
+        list-style-type: none;
+        text-align: center;
+
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        @include translate(0, -50%);
+        margin: 0;
+        padding: 0;
+
+        li {
+            margin-bottom: 6rem;
+
+            a { display: block; }
+
+            &#logo a {
+                color: $primary-color;
+                @include text-gradient(right, $secondary-color, $primary-color);
+                font-size: 6.4rem;
+                line-height: 1.1;
+            }
+
+            .icon {
+                font-size: 6rem;
+                line-height: 6rem;
+
+                display: block;
+                width: 6rem;
+                height: 6rem;
+                margin: auto;
+            }
+
+            &:last-child { margin-bottom: 0; }
+
+            &:hover { color: $secondary-color; }
+        }
+    }
+}

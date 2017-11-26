@@ -1,0 +1,20 @@
+// Transform
+@mixin transform($transforms) {
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+	-webkit-transform: $transforms;
+    transform: $transforms;
+}
+
+// Translate
+@mixin translate($x, $y) {
+   @include transform(translate($x, $y));
+}
+
+// Text gradient
+@mixin text-gradient($dir, $from, $to) {
+  background: -webkit-linear-gradient($dir, $from, $to);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

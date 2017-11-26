@@ -1,0 +1,38 @@
+// Layout
+
+* { box-sizing: border-box; }
+
+html { font-size: 62.5%; }
+
+body {
+    background-color: $body-bg;
+
+    font-family: $primary-font;
+    font-size: $default-font-size;
+    line-height: $default-line-height;
+    color: $primary-color;
+
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+div.container {
+    padding: $default-spacing;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    nav {
+        width: 15.5rem;
+        margin-right: $default-spacing;
+    }
+
+    div.content {
+        flex-grow: 1;
+    }
+}

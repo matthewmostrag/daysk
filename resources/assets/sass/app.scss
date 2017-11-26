@@ -1,9 +1,13 @@
-
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+// Normalize
+@import "normalize";
 
 // Variables
-@import "variables";
+@import "components/variables";
 
-// Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+// Components
+@import "components/icon-font";
+@import "components/mixins";
+@import "components/nav";
+
+// App
+@import "layout";

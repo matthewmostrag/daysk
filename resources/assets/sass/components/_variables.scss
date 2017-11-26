@@ -1,0 +1,27 @@
+
+// Body
+$body-bg: #f5f8fa;
+
+// Colors
+$primary-color: #8E0DB2;
+$secondary-color: #462CC2;
+
+// Gradients
+
+// Typography
+$primary-font: "Arvin", sans-serif;
+$default-font-size: 1.8rem;
+$default-line-height: 1.6;
+
+// Spacing
+$default-spacing: 6rem;
+
+// Fonts
+@font-face {
+  font-family: "Arvin";
+  src: url("../fonts/arvin/arvin.eot?") format("eot"),
+  url("../fonts/arvin/arvin.woff2") format("woff2"),
+  url("../fonts/arvin/arvin.woff") format("woff"),
+  url("../fonts/arvin/arvin.ttf") format("truetype"),
+  url("../fonts/arvin/arvin.svg#arvinregular") format("svg");
+}

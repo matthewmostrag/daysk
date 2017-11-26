@@ -1,7 +1,13 @@
-<h1>Tasks</h1>
+@extends('layout')
 
-<ul>
-    @foreach ($tasks as $task)
-        <li><a href="{{ route('tasks.show', ['task' => $task]) }}">{{ $task->title }}</a></li>
-    @endforeach
-</ul>
+@section('content')
+
+    <h1>Tasks</h1>
+
+    <ul>
+        @foreach ($tasks as $task)
+            <li><a href="{{ route('tasks.show', ['task' => $task]) }}">{{ $task->title }}</a></li>
+        @endforeach
+    </ul>
+
+@endsection
