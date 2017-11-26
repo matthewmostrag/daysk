@@ -14,7 +14,15 @@
 
 // Text gradient
 @mixin text-gradient($dir, $from, $to) {
-  background: -webkit-linear-gradient($dir, $from, $to);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    background: -webkit-linear-gradient($dir, $from, $to);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+// Linear gradient
+@mixin linear-gradient($dir, $from, $to) {
+    background-image: -o-linear-gradient($dir, $from, $to);
+    background-image: -moz-linear-gradient($dir, $from, $to);
+    background-image: -webkit-linear-gradient($dir, $from, $to);
+    background-image: linear-gradient($dir, $from, $to);
 }

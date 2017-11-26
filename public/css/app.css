@@ -262,7 +262,7 @@ html {
 }
 
 body {
-  background-color: #f5f8fa;
+  background-color: #F5F8FA;
   font-family: "Arvin", sans-serif;
   font-size: 1.8rem;
   line-height: 1.6;
@@ -303,13 +303,13 @@ div.container div.content {
 
 div.container div.content .col {
   -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  margin: 0 6rem 0 0;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 0 6rem;
 }
 
-div.container div.content .col:last-child {
-  margin-right: 0;
+.date {
+  margin-bottom: 6rem;
 }
 
 .date .day {
@@ -327,5 +327,40 @@ div.container div.content .col:last-child {
   display: block;
   font-size: 3.6rem;
   line-height: 1.2;
+}
+
+.date:after {
+  content: '';
+  display: block;
+  clear: left;
+}
+
+.progress .percentage {
+  font-size: 3.6rem;
+}
+
+.progress .percentage span {
+  font-size: 7.2rem;
+}
+
+.progress .progress-bar {
+  height: 3rem;
+  border-radius: 1.5rem;
+  background: #F1F1F1;
+  margin-bottom: 3rem;
+}
+
+.progress .progress-bar:after {
+  content: '';
+  display: block;
+  height: 3rem;
+  width: 40%;
+  border-radius: 1.5rem;
+  background-image: -webkit-gradient(linear, right top, left top, from(#462CC2), to(#8E0DB2));
+  background-image: linear-gradient(right, #462CC2, #8E0DB2);
+}
+
+.progress .message {
+  font-size: 4.8rem;
 }
 

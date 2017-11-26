@@ -2,6 +2,8 @@
 
 // Date component
 .date {
+    margin-bottom: $default-spacing;
+
     .day {
         float: left;
         margin-right: 1rem;
@@ -20,4 +22,39 @@
             line-height: 1.2;
         }
     }
+
+    &:after {
+        content: '';
+        display: block;
+        clear: left;
+    }
+}
+
+// Progress component
+.progress {
+    .percentage {
+        font-size: 3.6rem;
+
+        span { font-size: 7.2rem; }
+    }
+
+    .progress-bar {
+        height: 3rem;
+        border-radius: 1.5rem;
+
+        background: $grey;
+        margin-bottom: 3rem;
+
+        &:after {
+            content: '';
+            display: block;
+            height: 3rem;
+            width: 40%;
+            border-radius: 1.5rem;
+
+            @include linear-gradient(right, $secondary-color, $primary-color);
+        }
+    }
+
+    .message { font-size: 4.8rem; }
 }

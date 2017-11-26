@@ -38,10 +38,8 @@ div.container {
         align-items: center;
 
         .col {
-            flex-grow: 1;
-            margin: 0 $default-spacing 0 0;
-
-            &:last-child { margin-right: 0; }
+            flex: 1;
+            margin: 0 $default-spacing;
         }
     }
 }
