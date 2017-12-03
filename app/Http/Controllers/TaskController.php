@@ -103,4 +103,28 @@ class TaskController extends Controller
 
         return redirect()->route('tasks.index');
     }
+
+    /**
+     * Mark a task as done.
+     *
+     * @param \App\Task $task
+     */
+    public function done(Task $task)
+    {
+        $task->done();
+
+        return response('task marked as done!', 200);
+    }
+
+    /**
+     * Mark a task as done.
+     *
+     * @param \App\Task $task
+     */
+    public function undone(Task $task)
+    {
+        $task->undone();
+
+        return response('task marked as undone!', 200);
+    }
 }

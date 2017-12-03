@@ -1475,11 +1475,6 @@ form input[type=submit]:hover {
   background-color: #E2E2E2;
 }
 
-.tasks li.status-1:hover:before {
-  background-color: transparent;
-  border-color: #8E0DB2;
-}
-
 .tasks li.no-task {
   font-size: 3.6rem;
 }

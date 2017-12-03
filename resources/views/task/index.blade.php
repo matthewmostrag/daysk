@@ -13,7 +13,7 @@
     <div class="col col-tasks">
         <ul class="tasks">
             @forelse ($tasks as $task)
-                <li class="status-{{ $task->status }}">
+                <li class="status-{{ $task->status }} task" data-id="{{ $task->id }}" data-status="{{ $task->status }}">
                     <div class="task-body">
                         <div class="task-title">
                             {{ $task->title }}
@@ -29,4 +29,9 @@
         </ul>
     </div>
 
+@endsection
+
+@section('javascripts')
+    @parent
+    <script type="text/javascript" src="/js/tasks/index.js"></script>
 @endsection

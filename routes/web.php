@@ -12,3 +12,5 @@
 */
 
 Route::resource('tasks', 'TaskController');
+Route::get('tasks/{task}/done', 'TaskController@done')->name('tasks.done');
+Route::get('tasks/{task}/undone', 'TaskController@undone')->name('tasks.undone');

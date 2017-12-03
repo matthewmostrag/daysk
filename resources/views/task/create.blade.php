@@ -45,5 +45,5 @@
 
 @section('javascripts')
     @parent
-    <script type="text/javascript" src="/js/tasks.js"></script>
+    <script type="text/javascript" src="/js/tasks/create.js"></script>
 @endsection

@@ -115,11 +115,6 @@
                 border-color: $dark-grey;
                 background-color: $dark-grey;
             }
-
-            &:hover:before {
-                background-color: transparent;
-                border-color: $primary-color;
-            }
         }
 
         &.no-task {
