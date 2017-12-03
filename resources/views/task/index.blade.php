@@ -13,7 +13,16 @@
     <div class="col col-tasks">
         <ul class="tasks">
             @forelse ($tasks as $task)
-                <li class="status-{{ $task->status }}"><a href="{{ route('tasks.show', ['task' => $task]) }}">{{ $task->title }}</a></li>
+                <li class="status-{{ $task->status }}">
+                    <div class="task-body">
+                        <div class="task-title">
+                            {{ $task->title }}
+                        </div>
+                        <div class="task-description">
+                            {{ $task->description }}
+                        </div>
+                    </div>
+                </li>
             @empty
                 <li class="no-task"><i class="icon icon-battery"></i> Well, you don't have anything to do today... Let's not be lazy, <a href="{{ route('tasks.create') }}">add a task</a>!</li>
             @endforelse

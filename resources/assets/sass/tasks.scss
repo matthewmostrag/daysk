@@ -75,6 +75,14 @@
         margin: 3rem 0;
         font-size: 2.8rem;
 
+        display: flex;
+        align-items: center;
+
+        .task-body .task-description {
+            font-size: 1.6rem;
+            color: $black;
+        }
+
         &:before {
             content: '';
             display: inline-block;
@@ -101,6 +109,8 @@
             color: $dark-grey;
             text-decoration: line-through;
 
+            .task-body .task-description { color: $dark-grey; }
+
             &:before {
                 border-color: $dark-grey;
                 background-color: $dark-grey;
@@ -124,5 +134,7 @@
 
             &:before { display: none; }
         }
+
+        &:hover { cursor: pointer; }
     }
 }
