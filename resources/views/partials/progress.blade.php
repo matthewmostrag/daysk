@@ -1,6 +1,6 @@
 <div class="progress row">
     <div class="percentage">
-        <span>40%</span> completed
+        <span>{{ $progression }}%</span> completed
     </div>
     <div class="progress-bar"></div>
     <div class="message">

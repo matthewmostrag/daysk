@@ -2,13 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Task;
+use App\Models\Task;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreTask;
 use Carbon\Carbon;
+use App\Services\Tasks\ProgressionCalculator;
 
 class TaskController extends Controller
 {
+    /** @var ProgressionCalculator */
+    protected $progressionCalculator;
+
+    public function __construct(ProgressionCalculator $progressionCalculator)
+    {
+        $this->progressionCalculator = $progressionCalculator;
+    }
+
     /**
      * Display a listing of tasks.
      *
@@ -17,9 +26,12 @@ class TaskController extends Controller
     public function index()
     {
         $today = Carbon::today();
+        // @todo replace that with a getTodayTasks method somewhere
         $tasks = Task::whereDate('due_date', $today->toDateString())->get();
 
-        return view('task.index', compact('tasks'));
+        $progression = $this->progressionCalculator->getTodayProgression();
+
+        return view('task.index', compact('tasks', 'progression'));
     }
 
     /**
