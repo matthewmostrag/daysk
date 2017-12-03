@@ -6,6 +6,8 @@ $body-bg: #F5F8FA;
 $primary-color: #8E0DB2;
 $secondary-color: #462CC2;
 $grey: #F1F1F1;
+$dark-grey: #E2E2E2;
+$black: #555;
 
 // Typography
 $primary-font: "Arvin", sans-serif;
@@ -14,6 +16,7 @@ $default-line-height: 1.6;
 
 // Spacing
 $default-spacing: 6rem;
+$small-spacing: $default-spacing / 2;
 $wide-spacing: $default-spacing * 2;
 
 // Fonts
@@ -24,4 +27,15 @@ $wide-spacing: $default-spacing * 2;
   url("../fonts/arvin/arvin.woff") format("woff"),
   url("../fonts/arvin/arvin.ttf") format("truetype"),
   url("../fonts/arvin/arvin.svg#arvinregular") format("svg");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Arvin";
+  src: url("../fonts/arvin-bold/arvin_bold.eot?") format("eot"),
+  url("../fonts/arvin-bold/arvin_bold.woff2") format("woff2"),
+  url("../fonts/arvin-bold/arvin_bold.woff") format("woff"),
+  url("../fonts/arvin-bold/arvin_bold.ttf") format("truetype"),
+  url("../fonts/arvin-bold/arvin_bold.svg#arvinregular") format("svg");
+  font-weight: bold;
 }

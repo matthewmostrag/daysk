@@ -1,0 +1,22 @@
+// Titles
+h1 {
+    font-weight: 400;
+    margin-bottom: $small-spacing;
+}
+
+.has-subtitle { margin-bottom: 0; }
+.subtitle {
+    margin-top: 0;
+    margin-bottom: $default-spacing;
+}
+
+// Buttons
+.button {
+    background-color: $primary-color;
+    border-radius: 0.6rem;
+    color: $grey;
+    padding: 1rem 2rem;
+
+    .icon { margin-right: 0.5rem; }
+    &:hover { background-color: $secondary-color; }
+}

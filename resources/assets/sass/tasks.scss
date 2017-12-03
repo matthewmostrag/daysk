@@ -2,8 +2,6 @@
 
 // Date component
 .date {
-    margin-bottom: $default-spacing;
-
     .day {
         float: left;
         margin-right: 1rem;
@@ -52,9 +50,79 @@
             width: 40%;
             border-radius: 1.5rem;
 
-            @include linear-gradient(right, $secondary-color, $primary-color);
+            @include linear-gradient(to left, $secondary-color, $primary-color);
         }
     }
 
     .message { font-size: 4.8rem; }
+}
+
+// Tasks list
+.col-tasks {
+    height: 100%;
+    overflow: scroll;
+
+    display: flex;
+    align-items: center;
+}
+
+.tasks {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    li {
+        margin: 3rem 0;
+        font-size: 2.8rem;
+
+        &:before {
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+
+            width: $small-spacing;
+            height: $small-spacing;
+            border-radius: 50%;
+            margin-right: $small-spacing;
+            margin-top: -6px; // Little hack
+
+            border: 0.4rem solid $primary-color;
+        }
+
+        &.status-0:hover:before {
+            @include linear-gradient(to left, $secondary-color, $primary-color);
+            border: none;
+
+            width: $small-spacing + 0.8rem;
+            height: $small-spacing + 0.8rem;
+        }
+
+        &.status-1 {
+            color: $dark-grey;
+            text-decoration: line-through;
+
+            &:before {
+                border-color: $dark-grey;
+                background-color: $dark-grey;
+            }
+
+            &:hover:before {
+                background-color: transparent;
+                border-color: $primary-color;
+            }
+        }
+
+        &.no-task {
+            font-size: 3.6rem;
+
+            .icon {
+                display: block;
+                font-size: 6rem;
+            }
+
+            a { text-decoration: underline; }
+
+            &:before { display: none; }
+        }
+    }
 }

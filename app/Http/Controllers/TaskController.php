@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Task;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreTask;
+use Carbon\Carbon;
 
 class TaskController extends Controller
 {
@@ -15,7 +16,8 @@ class TaskController extends Controller
      */
     public function index()
     {
-        $tasks = Task::all();
+        $today = Carbon::today();
+        $tasks = Task::whereDate('due_date', $today->toDateString())->get();
 
         return view('task.index', compact('tasks'));
     }
@@ -44,9 +46,7 @@ class TaskController extends Controller
             'due_date' => $request->due_date
         ]);
 
-        return redirect()->route('tasks.show', [
-            'task' => $task
-        ]);
+        return redirect()->route('tasks.index');
     }
 
     /**

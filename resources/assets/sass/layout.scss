@@ -28,7 +28,7 @@ div.container {
     display: flex;
 
     nav {
-        width: 15.5rem;
+        flex: 0 0 15.5rem;
         margin-right: $default-spacing;
     }
 
@@ -40,6 +40,12 @@ div.container {
         .col {
             flex: 1;
             margin: 0 $default-spacing;
+
+            .row {
+                margin-bottom: $default-spacing;
+
+                &:last-child { margin-bottom: 0; }
+            }
         }
     }
 }

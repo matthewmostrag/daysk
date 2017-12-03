@@ -1,4 +1,4 @@
-<div class="progress">
+<div class="progress row">
     <div class="percentage">
         <span>40%</span> completed
     </div>

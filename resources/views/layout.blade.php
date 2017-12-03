@@ -10,16 +10,23 @@
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
 </head>
 <body>
-<div class="container">
-    @if (Route::has('login'))
-        {{-- Do something --}}
-    @endif
+    <div class="container">
+        @if (Route::has('login'))
+            {{-- Do something --}}
+        @endif
 
-    @include('partials.navigation')
+        @include('partials.navigation')
 
-    <div class="content">
-        @yield('content')
+        <div class="content">
+            @yield('content')
+        </div>
     </div>
-</div>
+
+    @section('javascripts')
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="/js/datepicker/datepicker.min.js"></script>
+        <script type="text/javascript" src="/js/datepicker/i18n/datepicker.en.js"></script>
+        <script type="text/javascript" src="/js/datepicker/i18n/datepicker.fr.js"></script>
+    @show
 </body>
 </html>
