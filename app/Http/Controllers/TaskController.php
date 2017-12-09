@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StoreTask;
 use Carbon\Carbon;
 use App\Services\Tasks\ProgressionCalculator;
+use Illuminate\Http\Response;
 
 class TaskController extends Controller
 {
@@ -21,14 +22,11 @@ class TaskController extends Controller
     /**
      * Display a listing of tasks.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
-        $today = Carbon::today();
-        // @todo replace that with a getTodayTasks method somewhere
-        $tasks = Task::whereDate('due_date', $today->toDateString())->get();
-
+        $tasks = Task::today()->get();
         $progression = $this->progressionCalculator->getTodayProgression();
 
         return view('task.index', compact('tasks', 'progression'));
@@ -37,7 +35,7 @@ class TaskController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -47,8 +45,8 @@ class TaskController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param StoreTask|Request $request
+     * @return Response
      */
     public function store(StoreTask $request)
     {
@@ -64,8 +62,8 @@ class TaskController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Task  $task
-     * @return \Illuminate\Http\Response
+     * @param Task $task
+     * @return Response
      */
     public function show(Task $task)
     {
@@ -75,8 +73,8 @@ class TaskController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Task  $task
-     * @return \Illuminate\Http\Response
+     * @param Task $task
+     * @return Response
      */
     public function edit(Task $task)
     {
@@ -86,9 +84,9 @@ class TaskController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Task  $task
-     * @return \Illuminate\Http\Response
+     * @param StoreTask|Request $request
+     * @param Task $task
+     * @return Response
      */
     public function update(StoreTask $request, Task $task)
     {
@@ -106,8 +104,8 @@ class TaskController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Task  $task
-     * @return \Illuminate\Http\Response
+     * @param Task $task
+     * @return Response
      */
     public function destroy(Task $task)
     {
@@ -119,7 +117,8 @@ class TaskController extends Controller
     /**
      * Mark a task as done.
      *
-     * @param \App\Task $task
+     * @param Task $task
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
      */
     public function done(Task $task)
     {
@@ -131,7 +130,8 @@ class TaskController extends Controller
     /**
      * Mark a task as done.
      *
-     * @param \App\Task $task
+     * @param Task $task
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
      */
     public function undone(Task $task)
     {

@@ -11,8 +11,7 @@ class ProgressionCalculator
     {
         $today = Carbon::today();
 
-        // @todo replace that with a getTodayTasks method somewhere : this needs to be a scope
-        $todayTasks = Task::whereDate('due_date', $today->toDateString())->get();
+        $todayTasks = Task::today()->get();
         $tasksCount = $todayTasks->count();
         $tasksDone = $todayTasks->where('status', 1)->count();
 
