@@ -49,6 +49,8 @@
             border-radius: 1.5rem;
 
             @include linear-gradient(to left, $secondary-color, $primary-color);
+
+            transition: width 0.5s ease-in-out;
         }
     }
 

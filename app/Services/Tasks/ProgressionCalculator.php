@@ -19,6 +19,6 @@ class ProgressionCalculator
             return 0;
         }
 
-        return $tasksDone / $tasksCount * 100;
+        return round($tasksDone / $tasksCount * 100);
     }
 }
