@@ -43,11 +43,9 @@
         background: $grey;
         margin-bottom: 3rem;
 
-        &:after {
-            content: '';
+        span {
             display: block;
             height: 3rem;
-            width: 40%;
             border-radius: 1.5rem;
 
             @include linear-gradient(to left, $secondary-color, $primary-color);

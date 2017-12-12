@@ -1394,11 +1394,9 @@ form input[type=submit]:hover {
   margin-bottom: 3rem;
 }
 
-.progress .progress-bar:after {
-  content: '';
+.progress .progress-bar span {
   display: block;
   height: 3rem;
-  width: 40%;
   border-radius: 1.5rem;
   background-image: -webkit-gradient(linear, right top, left top, from(#462CC2), to(#8E0DB2));
   background-image: linear-gradient(to left, #462CC2, #8E0DB2);

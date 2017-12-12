@@ -22,6 +22,8 @@ $('.task').click(function(){
     }
 
     function updateProgression(progression) {
-        $('.percentage span').text(progression + '%');
+        progression = progression + '%';
+        $('.percentage span').text(progression);
+        $('.progress-bar span').css('width', progression);
     }
 });
