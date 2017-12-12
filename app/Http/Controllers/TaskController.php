@@ -84,7 +84,7 @@ class TaskController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param StoreTask|Request $request
+     * @param StoreTask $request
      * @param Task $task
      * @return Response
      */
@@ -93,8 +93,11 @@ class TaskController extends Controller
         $task->update([
             'title' => $request->title,
             'description' => $request->description,
-            'due_date' => $request->due_date
+            'due_date' => $request->due_date,
+            'status' => $request->status
         ]);
+
+        return 'ok';
 
         return redirect()->route('tasks.show', [
             'task' => $task
@@ -112,31 +115,5 @@ class TaskController extends Controller
         $task->delete();
 
         return redirect()->route('tasks.index');
-    }
-
-    /**
-     * Mark a task as done.
-     *
-     * @param Task $task
-     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
-     */
-    public function done(Task $task)
-    {
-        $task->done();
-
-        return response('task marked as done!', 200);
-    }
-
-    /**
-     * Mark a task as done.
-     *
-     * @param Task $task
-     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
-     */
-    public function undone(Task $task)
-    {
-        $task->undone();
-
-        return response('task marked as undone!', 200);
     }
 }

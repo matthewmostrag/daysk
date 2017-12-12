@@ -1477,6 +1477,7 @@ form input[type=submit]:hover {
 
 .tasks li.no-task {
   font-size: 3.6rem;
+  display: block;
 }
 
 .tasks li.no-task .icon {
@@ -1486,6 +1487,10 @@ form input[type=submit]:hover {
 
 .tasks li.no-task a {
   text-decoration: underline;
+}
+
+.tasks li.no-task:hover {
+  cursor: default;
 }
 
 .tasks li.no-task:before {

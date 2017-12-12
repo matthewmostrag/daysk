@@ -119,6 +119,7 @@
 
         &.no-task {
             font-size: 3.6rem;
+            display: block;
 
             .icon {
                 display: block;
@@ -127,6 +128,7 @@
 
             a { text-decoration: underline; }
 
+            &:hover { cursor: default; }
             &:before { display: none; }
         }
 

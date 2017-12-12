@@ -15,7 +15,7 @@ class Task extends Model
     const STATUS_DOING = 1;
     const STATUS_DONE = 2;
 
-    protected $fillable = ['title', 'description', 'due_date'];
+    protected $fillable = ['title', 'description', 'due_date', 'status'];
 
     /**
      * Scope a query to only include popular users.
