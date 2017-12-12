@@ -9,8 +9,9 @@ $('.task').click(function(){
         headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
         url: '/tasks/status/' + task_id,
         data: {'status': 1 - task_status},
-        success: function() {
+        success: function(progression) {
             switchStatus();
+            updateProgression(progression);
         }
     });
 
@@ -18,5 +19,9 @@ $('.task').click(function(){
         $this.removeClass('status-' + task_status);
         $this.addClass('status-' + (1 - task_status));
         $this.attr('data-status', (1 - task_status));
+    }
+
+    function updateProgression(progression) {
+        $('.percentage span').text(progression + '%');
     }
 });
