@@ -7,10 +7,11 @@ use Carbon\Carbon;
 
 class ProgressionCalculator
 {
+    /**
+     * @return float|int
+     */
     public function getTodayProgression()
     {
-        $today = Carbon::today();
-
         $todayTasks = Task::today()->get();
         $tasksCount = $todayTasks->count();
         $tasksDone = $todayTasks->where('status', 1)->count();
@@ -20,5 +21,15 @@ class ProgressionCalculator
         }
 
         return round($tasksDone / $tasksCount * 100);
+    }
+
+    public function getPerformanceIndex()
+    {
+        // We want the time on a 24h day transformed to a time on a 16h day
+        $currentHour = Carbon::now()->hour * (2/3);
+        $remainingHours = 16 - $currentHour;
+        $remainingWork = 100 - $this->getTodayProgression();
+
+        return $remainingWork / $remainingHours;
     }
 }
