@@ -29,6 +29,9 @@ class TaskStatusController extends Controller
             'status' => $request->status
         ));
 
-        return $this->progressionCalculator->getTodayProgression();
+        return [
+            'progression' => $this->progressionCalculator->getTodayProgression(),
+            'message' => $this->progressionCalculator->getPerformanceMessage()->message
+        ];
     }
 }

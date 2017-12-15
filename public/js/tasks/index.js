@@ -9,9 +9,9 @@ $('.task').click(function(){
         headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
         url: '/tasks/status/' + task_id,
         data: {'status': 1 - task_status},
-        success: function(progression) {
+        success: function(data) {
             switchStatus();
-            updateProgression(progression);
+            updateProgression(data);
         }
     });
 
@@ -21,9 +21,11 @@ $('.task').click(function(){
         $this.attr('data-status', (1 - task_status));
     }
 
-    function updateProgression(progression) {
-        progression = progression + '%';
+    function updateProgression(data) {
+        var progression = data.progression + '%';
         $('.percentage span').text(progression);
         $('.progress-bar span').css('width', progression);
+
+        $('.progress .message').text(data.message);
     }
 });
