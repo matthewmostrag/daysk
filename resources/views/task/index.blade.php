@@ -7,7 +7,7 @@
         <div class="row">
             <a href="{{ route('tasks.create') }}" class="button"><i class="icon icon-add"></i> Add a new task</a>
         </div>
-        @include('partials.progress', compact('progression'))
+        @include('partials.progress', compact('progression', 'message'))
     </div>
 
     <div class="col col-tasks">

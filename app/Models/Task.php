@@ -27,22 +27,4 @@ class Task extends Model
     {
         return $query->whereDate('due_date', Carbon::today()->toDateString());
     }
-
-    /**
-     * Mark a task as done
-     */
-    public function done()
-    {
-        $this->status = 1;
-        $this->save();
-    }
-
-    /**
-     * Mark a task as undone
-     */
-    public function undone()
-    {
-        $this->status = 0;
-        $this->save();
-    }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Services\Tasks;
 
+use App\Models\PerformanceMessage;
 use App\Models\Task;
 use Carbon\Carbon;
 
@@ -23,7 +24,22 @@ class ProgressionCalculator
         return round($tasksDone / $tasksCount * 100);
     }
 
-    public function getPerformanceIndex()
+    /**
+     * @return string
+     */
+    public function getPerformanceMessage()
+    {
+        $performanceIndex = $this->getPerformanceIndex();
+
+        return PerformanceMessage::where('index', '<=', $performanceIndex)
+            ->orderBy('index', 'desc')
+            ->first();
+    }
+
+    /**
+     * @return float
+     */
+    protected function getPerformanceIndex()
     {
         // We want the time on a 24h day transformed to a time on a 16h day
         $currentHour = Carbon::now()->hour * (2/3);

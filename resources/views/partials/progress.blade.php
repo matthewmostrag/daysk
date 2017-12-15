@@ -4,6 +4,6 @@
     </div>
     <div class="progress-bar"><span style="width: {{ $progression }}%;"></span></div>
     <div class="message">
-        Keep going, that's good!
+        {{ $message }}
     </div>
 </div>

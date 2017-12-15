@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PerformanceMessage;
 use App\Models\Task;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreTask;
@@ -28,8 +29,13 @@ class TaskController extends Controller
     {
         $tasks = Task::today()->get();
         $progression = $this->progressionCalculator->getTodayProgression();
+        $message = $this->progressionCalculator->getPerformanceMessage()->message;
 
-        return view('task.index', compact('tasks', 'progression'));
+        return view('task.index', compact(
+            'tasks',
+            'progression',
+            'message'
+        ));
     }
 
     /**
